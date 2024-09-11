@@ -42,6 +42,15 @@
     <ItemGroup>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="src\Core\Screen\IScreen.cs" />
+        <Compile Include="src\Gameplay\Art.cs" />
+        <Compile Include="src\Gameplay\MonsterTradingCardsGame.cs" />
+        <Compile Include="src\Gameplay\Screens\StartScreen.cs" />
+        <Compile Include="src\Networking\Client\Client.cs" />
+        <Compile Include="src\Networking\Client\Credentials.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="src\Core\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

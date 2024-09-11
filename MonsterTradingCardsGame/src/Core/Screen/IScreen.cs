@@ -5,5 +5,7 @@ namespace MonsterTradingCardsGame.Core.Screen
         void Print();
         
         void Clear();
+        
+        
     }
 }
