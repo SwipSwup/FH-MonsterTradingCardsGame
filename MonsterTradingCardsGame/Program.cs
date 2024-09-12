@@ -4,9 +4,9 @@
     {
         public static void Main(string[] args)
         {
-            Gameplay.MonsterTradingCardsGame game = new Gameplay.MonsterTradingCardsGame();
+            Gameplay.MonsterTradingCardsGame game = new Gameplay.MonsterTradingCardsGame(102, 50);
 
-            while (true) ;
+            game.Start();
         }
     }
 }
