@@ -1,6 +1,6 @@
 using System;
 using System.Xml;
-using MonsterTradingCardsGame.Core.Screen;
+using MonsterTradingCardsGame.Core.Scene;
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
@@ -29,6 +29,8 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             );
         }
 
+        private int _menuSlot;
+        
         public override void Update()
         {
             ConsoleKeyInfo info = MonsterTradingCardsGame.GetKey();
@@ -57,9 +59,15 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 {
                     switch (_menuSlot)
                     {
+                        case 0:
+                            Game.LoadScene(new LoginScene());
+                            return;
+                        case 1:
+                            Game.LoadScene(new RegisterScene());
+                            return;
                         case 2:
-                            Environment.Exit(0);
-                            break;
+                            Game.Stop();
+                            return;
                     }
                     break;
                 }
@@ -70,9 +78,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             Draw();
         }
 
-        private int _menuSlot = 0;
-
-        public void DrawMenu()
+        private void DrawMenu()
         {
             Console.WriteLine(
                 "                                                 /   \\\n" +

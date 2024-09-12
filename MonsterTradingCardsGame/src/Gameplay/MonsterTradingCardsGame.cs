@@ -1,26 +1,22 @@
 using System;
-using MonsterTradingCardsGame.Networking.Client;
-using MonsterTradingCardsGame.Core.Screen;
+using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Gameplay.Scenes;
 
 namespace MonsterTradingCardsGame.Gameplay
 {
     public class MonsterTradingCardsGame
     {
-        private Client _client;
-
         private Scene _activeScene;
 
         public MonsterTradingCardsGame()
         {
             InitializeConsole();
-            _activeScene = new StartScene();
         }
 
         public MonsterTradingCardsGame(int width, int height)
         {
             InitializeConsole(width, height);
-            _activeScene = new StartScene();
+            LoadScene(new StartScene());
         }
 
         public void Start()
@@ -31,6 +27,20 @@ namespace MonsterTradingCardsGame.Gameplay
             {
                 _activeScene.Update();
             }
+        }
+
+        public void Stop()
+        {
+            Environment.Exit(0);
+        }
+
+        public void LoadScene(Scene scene)
+        {
+            Console.Clear();
+            
+            _activeScene = scene;
+            _activeScene.Initialize(this);
+            _activeScene.Draw();
         }
 
         private void InitializeConsole(int width = -1, int height = -1)
@@ -74,15 +84,6 @@ namespace MonsterTradingCardsGame.Gameplay
                 Console.WriteLine();
         }
 
-        private static void WriteInternal(string message, ConsoleColor textColor, ConsoleColor backgroundColor,
-            Action<string> write)
-        {
-            Console.ForegroundColor = textColor;
-            Console.BackgroundColor = backgroundColor;
-            write(message);
-            Console.ResetColor();
-        }
-
         public static void WriteLine(string message, ConsoleColor textColor = ConsoleColor.White,
             ConsoleColor backgroundColor = ConsoleColor.Black)
         {
@@ -93,6 +94,15 @@ namespace MonsterTradingCardsGame.Gameplay
             ConsoleColor backgroundColor = ConsoleColor.Black)
         {
             WriteInternal(message, textColor, backgroundColor, Console.Write);
+        }
+
+        private static void WriteInternal(string message, ConsoleColor textColor, ConsoleColor backgroundColor,
+            Action<string> write)
+        {
+            Console.ForegroundColor = textColor;
+            Console.BackgroundColor = backgroundColor;
+            write(message);
+            Console.ResetColor();
         }
     }
 }
