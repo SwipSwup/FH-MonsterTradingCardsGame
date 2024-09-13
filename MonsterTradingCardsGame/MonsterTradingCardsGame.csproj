@@ -13,6 +13,7 @@
         <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,16 +43,15 @@
     <ItemGroup>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="src\Core\Input\Input.cs" />
         <Compile Include="src\Core\Networking\Client\Client.cs" />
         <Compile Include="src\Core\Networking\Client\Credentials.cs" />
         <Compile Include="src\Core\Scene\Scene.cs" />
+        <Compile Include="src\Core\Settings\GameSettings.cs" />
         <Compile Include="src\Gameplay\MonsterTradingCardsGame.cs" />
         <Compile Include="src\Gameplay\Scenes\LoginScene.cs" />
         <Compile Include="src\Gameplay\Scenes\RegisterScene.cs" />
         <Compile Include="src\Gameplay\Scenes\StartScene.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="src\Core\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

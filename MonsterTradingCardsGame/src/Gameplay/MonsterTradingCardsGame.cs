@@ -26,6 +26,7 @@ namespace MonsterTradingCardsGame.Gameplay
             while (true)
             {
                 _activeScene.Update();
+                _activeScene.Draw();
             }
         }
 
@@ -36,6 +37,8 @@ namespace MonsterTradingCardsGame.Gameplay
 
         public void LoadScene(Scene scene)
         {
+            _activeScene?.Destroy();
+            
             Console.Clear();
             
             _activeScene = scene;
@@ -45,7 +48,7 @@ namespace MonsterTradingCardsGame.Gameplay
 
         private void InitializeConsole(int width = -1, int height = -1)
         {
-            Console.Title = "Monster Trading Cards Game";
+            Console.Title = "Titan Clash";
             if (width < 0)
             {
                 Console.WindowWidth = Console.LargestWindowWidth;

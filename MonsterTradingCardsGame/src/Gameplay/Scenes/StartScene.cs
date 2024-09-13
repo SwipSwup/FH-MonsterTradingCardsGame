@@ -1,5 +1,5 @@
 using System;
-using System.Xml;
+using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
@@ -13,6 +13,59 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             DrawTitle();
 
             DrawMenu();
+        }
+
+        public override void Initialize(MonsterTradingCardsGame game)
+        {
+            base.Initialize(game);
+
+            Input.RegisterKeyAction(ConsoleKey.LeftArrow, OnMenuLeft);
+            Input.RegisterKeyAction(ConsoleKey.RightArrow, OnMenuRight);
+            Input.RegisterKeyAction(ConsoleKey.Spacebar, OnMenuSpace);
+        }
+        
+        public override void Destroy()
+        {
+            Input.UnregisterKeyAction(ConsoleKey.LeftArrow, OnMenuLeft);
+            Input.UnregisterKeyAction(ConsoleKey.RightArrow, OnMenuRight);
+            Input.UnregisterKeyAction(ConsoleKey.Spacebar, OnMenuSpace);
+        }
+        
+        public override void Update()
+        {
+            Input.WaitForKeyPress();
+        }
+
+        private void OnMenuSpace(ConsoleKeyInfo obj)
+        {
+            switch (_menuSlot)
+            {
+                case 0:
+                    Game.LoadScene(new LoginScene());
+                    return;
+                case 1:
+                    Game.LoadScene(new RegisterScene());
+                    return;
+                case 2:
+                    Game.Stop();
+                    return;
+            }
+        }
+
+        private void OnMenuRight(ConsoleKeyInfo keyInfo)
+        {
+            _menuSlot++;
+
+            if (_menuSlot > 2)
+                _menuSlot = 2;
+        }
+
+        private void OnMenuLeft(ConsoleKeyInfo keyInfo)
+        {
+            _menuSlot--;
+
+            if (_menuSlot < 0)
+                _menuSlot = 0;
         }
 
         private void DrawTitle()
@@ -30,53 +83,9 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         }
 
         private int _menuSlot;
-        
-        public override void Update()
-        {
-            ConsoleKeyInfo info = MonsterTradingCardsGame.GetKey();
 
-            switch (info.Key)
-            {
-                case ConsoleKey.A:
-                {
-                    _menuSlot--;
+      
 
-                    if (_menuSlot < 0)
-                        _menuSlot = 2;
-
-                    break;
-                }
-                case ConsoleKey.D:
-                {
-                    _menuSlot++;
-
-                    if (_menuSlot > 2)
-                        _menuSlot = 0;
-
-                    break;
-                }
-                case ConsoleKey.Spacebar:
-                {
-                    switch (_menuSlot)
-                    {
-                        case 0:
-                            Game.LoadScene(new LoginScene());
-                            return;
-                        case 1:
-                            Game.LoadScene(new RegisterScene());
-                            return;
-                        case 2:
-                            Game.Stop();
-                            return;
-                    }
-                    break;
-                }
-                default:
-                    return;
-            }
-
-            Draw();
-        }
 
         private void DrawMenu()
         {
@@ -97,7 +106,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 _menuSlot == 0 ? ConsoleColor.Black : ConsoleColor.White,
                 _menuSlot == 0 ? ConsoleColor.White : ConsoleColor.Black
             );
-            
+
             Console.Write("       ");
             MonsterTradingCardsGame.Write(
                 "[Register]",

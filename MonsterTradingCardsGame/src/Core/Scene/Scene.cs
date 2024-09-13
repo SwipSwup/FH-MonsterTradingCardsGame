@@ -7,7 +7,7 @@ namespace MonsterTradingCardsGame.Core.Scene
         protected Gameplay.MonsterTradingCardsGame Game;
 
 
-        public void Initialize(Gameplay.MonsterTradingCardsGame game)
+        public virtual void Initialize(Gameplay.MonsterTradingCardsGame game)
         {
             Game = game;
         }
@@ -17,5 +17,7 @@ namespace MonsterTradingCardsGame.Core.Scene
         }
         
         public abstract void Update();
+        
+        public abstract void Destroy();
     }
 }
