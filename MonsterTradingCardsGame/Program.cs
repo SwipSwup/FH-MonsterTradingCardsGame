@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            Gameplay.MonsterTradingCardsGame game = new Gameplay.MonsterTradingCardsGame(102, 50);
+            MonsterTradingCardsGame game = new MonsterTradingCardsGame(102, 50);
 
             game.Start();
         }

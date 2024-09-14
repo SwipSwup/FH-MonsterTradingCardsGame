@@ -49,12 +49,20 @@
         <Compile Include="src\Core\Scene\Scene.cs" />
 <<<<<<< HEAD
         <Compile Include="src\Core\Settings\GameSettings.cs" />
+<<<<<<< Updated upstream
 =======
 >>>>>>> 856f5eb (Add login scene)
         <Compile Include="src\Gameplay\MonsterTradingCardsGame.cs" />
+=======
+        <Compile Include="src\Core\UI\GuiStyle.cs" />
+        <Compile Include="src\Core\UI\Gui.cs" />
+>>>>>>> Stashed changes
         <Compile Include="src\Gameplay\Scenes\LoginScene.cs" />
         <Compile Include="src\Gameplay\Scenes\RegisterScene.cs" />
         <Compile Include="src\Gameplay\Scenes\StartScene.cs" />
+        <Compile Include="src\Gameplay\User\User.cs" />
+        <Compile Include="src\Gameplay\User\UserData.cs" />
+        <Compile Include="src\MonsterTradingCardsGame.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

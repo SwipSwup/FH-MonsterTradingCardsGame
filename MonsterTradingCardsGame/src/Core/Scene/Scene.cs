@@ -4,14 +4,18 @@ namespace MonsterTradingCardsGame.Core.Scene
 {
     public abstract class Scene
     {
-        protected Gameplay.MonsterTradingCardsGame Game;
+        protected MonsterTradingCardsGame Game;
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         public virtual void Initialize(Gameplay.MonsterTradingCardsGame game)
 =======
         public void Initialize(Gameplay.MonsterTradingCardsGame game)
 >>>>>>> 856f5eb (Add login scene)
+=======
+        public virtual void Initialize(MonsterTradingCardsGame game)
+>>>>>>> Stashed changes
         {
             Game = game;
         }

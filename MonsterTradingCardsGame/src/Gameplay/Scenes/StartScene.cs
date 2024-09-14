@@ -5,11 +5,14 @@ using MonsterTradingCardsGame.Core.Input;
 using System.Xml;
 >>>>>>> 856f5eb (Add login scene)
 using MonsterTradingCardsGame.Core.Scene;
+using MonsterTradingCardsGame.Core.UI;
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class StartScene : Scene
     {
+        private int _menuIndex;
+        
         public override void Draw()
         {
             base.Draw();
@@ -42,7 +45,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
         private void OnMenuSpace(ConsoleKeyInfo obj)
         {
-            switch (_menuSlot)
+            switch (_menuIndex)
             {
                 case 0:
                     Game.LoadScene(new LoginScene());
@@ -58,18 +61,18 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
         private void OnMenuRight(ConsoleKeyInfo keyInfo)
         {
-            _menuSlot++;
+            _menuIndex++;
 
-            if (_menuSlot > 2)
-                _menuSlot = 2;
+            if (_menuIndex > 2)
+                _menuIndex = 2;
         }
 
         private void OnMenuLeft(ConsoleKeyInfo keyInfo)
         {
-            _menuSlot--;
+            _menuIndex--;
 
-            if (_menuSlot < 0)
-                _menuSlot = 0;
+            if (_menuIndex < 0)
+                _menuIndex = 0;
         }
 
         private void DrawTitle()
@@ -86,6 +89,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             );
         }
 
+<<<<<<< Updated upstream
         private int _menuSlot;
 <<<<<<< HEAD
 =======
@@ -94,6 +98,8 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         {
             ConsoleKeyInfo info = MonsterTradingCardsGame.GetKey();
 >>>>>>> 856f5eb (Add login scene)
+=======
+>>>>>>> Stashed changes
 
       
 
@@ -137,7 +143,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 >>>>>>> 856f5eb (Add login scene)
         private void DrawMenu()
         {
-            Console.WriteLine(
+            MonsterTradingCardsGame.WriteLine(
                 "                                                 /   \\\n" +
                 "                       _                 )      ((   ))     (\n" +
                 "                      (@)               /|\\      ))_((     /|\\                 _\n" +
@@ -148,29 +154,17 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 "                      |-|                                                     | |"
             );
 
-            Console.Write("                      | |        ");
-            MonsterTradingCardsGame.Write(
-                "[Login]",
-                _menuSlot == 0 ? ConsoleColor.Black : ConsoleColor.White,
-                _menuSlot == 0 ? ConsoleColor.White : ConsoleColor.Black
-            );
+            MonsterTradingCardsGame.Write("                      | |        ");
+            Gui.Button("Login", _menuIndex == 0);
 
-            Console.Write("       ");
-            MonsterTradingCardsGame.Write(
-                "[Register]",
-                _menuSlot == 1 ? ConsoleColor.Black : ConsoleColor.White,
-                _menuSlot == 1 ? ConsoleColor.White : ConsoleColor.Black
-            );
+            Gui.SpaceHorizontal(7);
+            Gui.Button("Register", _menuIndex == 1);
 
-            Console.Write("       ");
-            MonsterTradingCardsGame.Write(
-                "[Exit]",
-                _menuSlot == 2 ? ConsoleColor.Black : ConsoleColor.White,
-                _menuSlot == 2 ? ConsoleColor.White : ConsoleColor.Black
-            );
-            Console.Write("        |-|\n");
+            Gui.SpaceHorizontal(7);
+            Gui.Button("Exit", _menuIndex == 2);
+            MonsterTradingCardsGame.Write("        |-|\n");
 
-            Console.WriteLine(
+            MonsterTradingCardsGame.WriteLine(
                 "                      |_|_____________________________________________________| |\n" +
                 "                      (@)       l   /\\ /         ( (       \\ /\\   l         `\\|-|\n" +
                 "                                l /   V           \\ \\       V   \\ l           (@)\n" +

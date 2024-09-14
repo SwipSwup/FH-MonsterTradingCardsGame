@@ -2,7 +2,7 @@ using System;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Gameplay.Scenes;
 
-namespace MonsterTradingCardsGame.Gameplay
+namespace MonsterTradingCardsGame
 {
     public class MonsterTradingCardsGame
     {
@@ -82,12 +82,6 @@ namespace MonsterTradingCardsGame.Gameplay
         public static ConsoleKeyInfo GetKey()
         {
             return Console.ReadKey(true);
-        }
-
-        public static void WriteSpace(int space, ConsoleColor backgroundColor)
-        {
-            for (int i = 0; i < space; i++)
-                Console.WriteLine();
         }
 
         public static void WriteLine(string message, ConsoleColor textColor = ConsoleColor.White,
