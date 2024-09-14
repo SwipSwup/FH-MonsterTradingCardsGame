@@ -7,7 +7,11 @@ namespace MonsterTradingCardsGame.Core.Scene
         protected Gameplay.MonsterTradingCardsGame Game;
 
 
+<<<<<<< HEAD
         public virtual void Initialize(Gameplay.MonsterTradingCardsGame game)
+=======
+        public void Initialize(Gameplay.MonsterTradingCardsGame game)
+>>>>>>> 856f5eb (Add login scene)
         {
             Game = game;
         }
@@ -17,7 +21,10 @@ namespace MonsterTradingCardsGame.Core.Scene
         }
         
         public abstract void Update();
+<<<<<<< HEAD
         
         public abstract void Destroy();
+=======
+>>>>>>> 856f5eb (Add login scene)
     }
 }

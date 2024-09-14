@@ -37,8 +37,11 @@ namespace MonsterTradingCardsGame.Gameplay
 
         public void LoadScene(Scene scene)
         {
+<<<<<<< HEAD
             _activeScene?.Destroy();
             
+=======
+>>>>>>> 856f5eb (Add login scene)
             Console.Clear();
             
             _activeScene = scene;

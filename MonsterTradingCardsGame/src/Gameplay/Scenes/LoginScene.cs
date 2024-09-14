@@ -1,13 +1,18 @@
 using System;
+<<<<<<< HEAD
 using System.Linq;
 using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.Settings;
+=======
+using MonsterTradingCardsGame.Core.Scene;
+>>>>>>> 856f5eb (Add login scene)
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class LoginScene : Scene
     {
+<<<<<<< HEAD
         private int _menuSlotHorizontal;
         private int _menuSlotVertical;
         
@@ -123,15 +128,24 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             Input.UnregisterKeyAction(ConsoleKey.Spacebar, OnMenuSpace);
             
             Input.UnregisterDefaultAction(OnKeyPressed);
+=======
+        public override void Update()
+        {
+>>>>>>> 856f5eb (Add login scene)
         }
 
         public override void Draw()
         {
             base.Draw();
+<<<<<<< HEAD
 
             DrawTitle();
 
             DrawMenu();
+=======
+            
+            DrawTitle();
+>>>>>>> 856f5eb (Add login scene)
         }
 
         private void DrawTitle()
@@ -147,6 +161,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 "    \u2591\u2591\u2591\u2591\u2591    \u2591\u2591\u2591\u2591\u2591    \u2591\u2591\u2591\u2591\u2591   \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591      \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591 \n\n\n\n"
             );
         }
+<<<<<<< HEAD
 
         
 
@@ -183,5 +198,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 _menuSlotHorizontal == 2 && _menuSlotVertical == 1 ? ConsoleColor.White : ConsoleColor.Black
             );
         }
+=======
+>>>>>>> 856f5eb (Add login scene)
     }
 }

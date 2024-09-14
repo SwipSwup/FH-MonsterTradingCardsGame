@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 using System;
 using System.Linq;
 using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.Settings;
 using static System.String;
+=======
+using MonsterTradingCardsGame.Core.Scene;
+>>>>>>> 856f5eb (Add login scene)
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class RegisterScene : Scene
     {
+<<<<<<< HEAD
         private int _menuSlotHorizontal;
         private int _menuSlotVertical;
         
@@ -195,6 +200,10 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 _menuSlotHorizontal == 3 && _menuSlotVertical == 1 ? ConsoleColor.Black : ConsoleColor.White,
                 _menuSlotHorizontal == 3 && _menuSlotVertical == 1 ? ConsoleColor.White : ConsoleColor.Black
             );
+=======
+        public override void Update()
+        {
+>>>>>>> 856f5eb (Add login scene)
         }
     }
 }
