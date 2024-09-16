@@ -47,16 +47,12 @@
         <Compile Include="src\Core\Networking\Client\Client.cs" />
         <Compile Include="src\Core\Networking\Client\Credentials.cs" />
         <Compile Include="src\Core\Scene\Scene.cs" />
-<<<<<<< HEAD
+
         <Compile Include="src\Core\Settings\GameSettings.cs" />
-<<<<<<< Updated upstream
-=======
->>>>>>> 856f5eb (Add login scene)
-        <Compile Include="src\Gameplay\MonsterTradingCardsGame.cs" />
-=======
+
         <Compile Include="src\Core\UI\GuiStyle.cs" />
         <Compile Include="src\Core\UI\Gui.cs" />
->>>>>>> Stashed changes
+
         <Compile Include="src\Gameplay\Scenes\LoginScene.cs" />
         <Compile Include="src\Gameplay\Scenes\RegisterScene.cs" />
         <Compile Include="src\Gameplay\Scenes\StartScene.cs" />

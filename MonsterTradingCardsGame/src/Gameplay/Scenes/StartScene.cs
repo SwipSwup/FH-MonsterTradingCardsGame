@@ -1,9 +1,6 @@
 using System;
-<<<<<<< HEAD
 using MonsterTradingCardsGame.Core.Input;
-=======
 using System.Xml;
->>>>>>> 856f5eb (Add login scene)
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.UI;
 
@@ -89,58 +86,8 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             );
         }
 
-<<<<<<< Updated upstream
         private int _menuSlot;
-<<<<<<< HEAD
-=======
         
-        public override void Update()
-        {
-            ConsoleKeyInfo info = MonsterTradingCardsGame.GetKey();
->>>>>>> 856f5eb (Add login scene)
-=======
->>>>>>> Stashed changes
-
-      
-
-
-<<<<<<< HEAD
-=======
-                    break;
-                }
-                case ConsoleKey.D:
-                {
-                    _menuSlot++;
-
-                    if (_menuSlot > 2)
-                        _menuSlot = 0;
-
-                    break;
-                }
-                case ConsoleKey.Spacebar:
-                {
-                    switch (_menuSlot)
-                    {
-                        case 0:
-                            Game.LoadScene(new LoginScene());
-                            return;
-                        case 1:
-                            Game.LoadScene(new RegisterScene());
-                            return;
-                        case 2:
-                            Game.Stop();
-                            return;
-                    }
-                    break;
-                }
-                default:
-                    return;
-            }
-
-            Draw();
-        }
-
->>>>>>> 856f5eb (Add login scene)
         private void DrawMenu()
         {
             MonsterTradingCardsGame.WriteLine(

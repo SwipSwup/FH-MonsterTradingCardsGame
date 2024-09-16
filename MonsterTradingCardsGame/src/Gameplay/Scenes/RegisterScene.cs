@@ -1,32 +1,15 @@
-<<<<<<< HEAD
 using System;
 using System.Linq;
 using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.Settings;
-<<<<<<< Updated upstream
-using static System.String;
-=======
-using MonsterTradingCardsGame.Core.Scene;
->>>>>>> 856f5eb (Add login scene)
-=======
 using MonsterTradingCardsGame.Core.UI;
->>>>>>> Stashed changes
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class RegisterScene : Scene
     {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-        private int _menuSlotHorizontal;
-        private int _menuSlotVertical;
-        
-        private string _username = Empty;
-        private string _password = Empty ;
-        private string _passwordConfirm = Empty ;
-        
-=======
+
         private int _horizontalMenuIndex;
         private int _verticalMenuIndex;
 
@@ -34,7 +17,6 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         private string _password = string.Empty;
         private string _passwordConfirm = string.Empty;
 
->>>>>>> Stashed changes
         public override void Initialize(MonsterTradingCardsGame game)
         {
             base.Initialize(game);
@@ -186,26 +168,13 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 GameSettings.MAX_PASSWORD_LENGTH,
                 new GuiStyle { Offset = 8 }
             );
-
-<<<<<<< Updated upstream
-            MonsterTradingCardsGame.Write(" ");
-            MonsterTradingCardsGame.Write(
-                "[Back]",
-                _menuSlotHorizontal == 3 && _menuSlotVertical == 1 ? ConsoleColor.Black : ConsoleColor.White,
-                _menuSlotHorizontal == 3 && _menuSlotVertical == 1 ? ConsoleColor.White : ConsoleColor.Black
-            );
-=======
-        public override void Update()
-        {
->>>>>>> 856f5eb (Add login scene)
-=======
+            
             Gui.SpaceVertical(1);
             Gui.SpaceHorizontal(8);
             Gui.Button("Register", _horizontalMenuIndex == 3 && _verticalMenuIndex == 0);
 
             Gui.SpaceHorizontal(1);
             Gui.Button("Back", _horizontalMenuIndex == 3 && _verticalMenuIndex == 1);
->>>>>>> Stashed changes
         }
     }
 }

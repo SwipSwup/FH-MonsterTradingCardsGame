@@ -1,37 +1,20 @@
 using System;
-<<<<<<< HEAD
 using System.Linq;
 using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.Settings;
-<<<<<<< Updated upstream
-=======
-using MonsterTradingCardsGame.Core.Scene;
->>>>>>> 856f5eb (Add login scene)
-=======
 using MonsterTradingCardsGame.Core.UI;
->>>>>>> Stashed changes
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class LoginScene : Scene
     {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-        private int _menuSlotHorizontal;
-        private int _menuSlotVertical;
-        
-        private string _username = String.Empty;
-        private string _password = String.Empty ;
-        
-=======
         private int _horizontalMenuIndex;
         private int _verticalMenuIndex;
 
         private string _username = string.Empty;
         private string _password = string.Empty;
 
->>>>>>> Stashed changes
         public override void Update()
         {
             Input.WaitForKeyPress();
@@ -121,43 +104,18 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         {
             _horizontalMenuIndex++;
 
-<<<<<<< Updated upstream
-            if (_menuSlotHorizontal > 2)
-                _menuSlotHorizontal = 0;
-        }
-
-
-        public override void Destroy()
-        {
-            Input.UnregisterKeyAction(ConsoleKey.A, OnMenuLeft);
-            Input.UnregisterKeyAction(ConsoleKey.D, OnMenuRight);
-            Input.UnregisterKeyAction(ConsoleKey.W, OnMenuUp);
-            Input.UnregisterKeyAction(ConsoleKey.S, OnMenuDown);
-            Input.UnregisterKeyAction(ConsoleKey.Spacebar, OnMenuSpace);
-            
-            Input.UnregisterDefaultAction(OnKeyPressed);
-=======
-        public override void Update()
-        {
->>>>>>> 856f5eb (Add login scene)
-=======
             if (_horizontalMenuIndex > 2)
                 _horizontalMenuIndex = 0;
->>>>>>> Stashed changes
         }
+
 
         public override void Draw()
         {
             base.Draw();
-<<<<<<< HEAD
 
             DrawTitle();
 
             DrawMenu();
-=======
-            
-            DrawTitle();
->>>>>>> 856f5eb (Add login scene)
         }
 
         private void DrawTitle()
@@ -173,7 +131,6 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 "    \u2591\u2591\u2591\u2591\u2591    \u2591\u2591\u2591\u2591\u2591    \u2591\u2591\u2591\u2591\u2591   \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591      \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591\u2591  \u2591\u2591\u2591\u2591 \u2591\u2591\u2591\u2591\u2591 \n\n\n\n"
             );
         }
-<<<<<<< HEAD
 
         private void DrawMenu()
         {
@@ -203,7 +160,5 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             Gui.SpaceHorizontal(1);
             Gui.Button("Back", _horizontalMenuIndex == 2 && _verticalMenuIndex == 1);
         }
-=======
->>>>>>> 856f5eb (Add login scene)
     }
 }
