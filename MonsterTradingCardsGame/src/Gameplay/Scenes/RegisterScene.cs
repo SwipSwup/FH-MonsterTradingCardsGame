@@ -126,7 +126,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
         private void DrawTitle()
         {
-            Console.WriteLine(
+            Gui.WriteLine(
                 "\n  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  \u2588\u2588\u2588   \u2588\u2588\u2588\u2588\u2588                              \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  \u2588\u2588\u2588\u2588                    \u2588\u2588\u2588\u2588\u2588     \n" +
                 " \u2591\u2588\u2591\u2591\u2591\u2588\u2588\u2588\u2591\u2591\u2591\u2588 \u2591\u2591\u2591   \u2591\u2591\u2588\u2588\u2588                              \u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2588\u2588\u2588\u2591\u2591\u2588\u2588\u2588                   \u2591\u2591\u2588\u2588\u2588      \n" +
                 " \u2591   \u2591\u2588\u2588\u2588  \u2591  \u2588\u2588\u2588\u2588  \u2588\u2588\u2588\u2588\u2588\u2588\u2588    \u2588\u2588\u2588\u2588\u2588\u2588   \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588      \u2588\u2588\u2588     \u2591\u2591\u2591  \u2591\u2588\u2588\u2588   \u2588\u2588\u2588\u2588\u2588\u2588    \u2588\u2588\u2588\u2588\u2588  \u2591\u2588\u2588\u2588\u2588\u2588\u2588\u2588  \n" +
@@ -141,7 +141,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         private void DrawMenu()
         {
             Gui.SpaceHorizontal(8);
-            MonsterTradingCardsGame.WriteLine("Username:");
+            Gui.WriteLine("Username:");
             Gui.TextField(
                 _username,
                 _horizontalMenuIndex == 0,
@@ -151,7 +151,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
             Gui.SpaceVertical(1);
             Gui.SpaceHorizontal(8);
-            MonsterTradingCardsGame.WriteLine("Password:");
+            Gui.WriteLine("Password:");
             Gui.TextField(
                 string.Concat(Enumerable.Repeat("*", _password.Length)),
                 _horizontalMenuIndex == 1,
@@ -161,7 +161,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
             Gui.SpaceVertical(1);
             Gui.SpaceHorizontal(8);
-            MonsterTradingCardsGame.WriteLine("Confirm password:");
+            Gui.WriteLine("Confirm password:");
             Gui.TextField(
                 string.Concat(Enumerable.Repeat("*", _passwordConfirm.Length)),
                 _horizontalMenuIndex == 2,

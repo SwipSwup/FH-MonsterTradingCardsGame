@@ -16,7 +16,8 @@ namespace MonsterTradingCardsGame
         public MonsterTradingCardsGame(int width, int height)
         {
             InitializeConsole(width, height);
-            LoadScene(new StartScene());
+            //LoadScene(new StartScene());
+            LoadScene(new DashboardScene());
         }
 
         public void Start()
@@ -80,25 +81,6 @@ namespace MonsterTradingCardsGame
             return Console.ReadKey(true);
         }
 
-        public static void WriteLine(string message, ConsoleColor textColor = ConsoleColor.White,
-            ConsoleColor backgroundColor = ConsoleColor.Black)
-        {
-            WriteInternal(message, textColor, backgroundColor, Console.WriteLine);
-        }
-
-        public static void Write(string message, ConsoleColor textColor = ConsoleColor.White,
-            ConsoleColor backgroundColor = ConsoleColor.Black)
-        {
-            WriteInternal(message, textColor, backgroundColor, Console.Write);
-        }
-
-        private static void WriteInternal(string message, ConsoleColor textColor, ConsoleColor backgroundColor,
-            Action<string> write)
-        {
-            Console.ForegroundColor = textColor;
-            Console.BackgroundColor = backgroundColor;
-            write(message);
-            Console.ResetColor();
-        }
+        
     }
 }

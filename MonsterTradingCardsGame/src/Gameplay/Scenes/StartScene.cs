@@ -90,7 +90,8 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
         
         private void DrawMenu()
         {
-            MonsterTradingCardsGame.WriteLine(
+            
+            Gui.WriteLine(
                 "                                                 /   \\\n" +
                 "                       _                 )      ((   ))     (\n" +
                 "                      (@)               /|\\      ))_((     /|\\                 _\n" +
@@ -101,7 +102,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 "                      |-|                                                     | |"
             );
 
-            MonsterTradingCardsGame.Write("                      | |        ");
+            Gui.Write("                      | |        ");
             Gui.Button("Login", _menuIndex == 0);
 
             Gui.SpaceHorizontal(7);
@@ -109,9 +110,9 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
 
             Gui.SpaceHorizontal(7);
             Gui.Button("Exit", _menuIndex == 2);
-            MonsterTradingCardsGame.Write("        |-|\n");
+            Gui.Write("        |-|\n");
 
-            MonsterTradingCardsGame.WriteLine(
+            Gui.WriteLine(
                 "                      |_|_____________________________________________________| |\n" +
                 "                      (@)       l   /\\ /         ( (       \\ /\\   l         `\\|-|\n" +
                 "                                l /   V           \\ \\       V   \\ l           (@)\n" +

@@ -8,7 +8,7 @@ public static class Gui
 {
     public static void SpaceHorizontal(int width, GuiStyle style)
     {
-        MonsterTradingCardsGame.Write(string.Concat(Enumerable.Repeat(" ", width)), style.TextColor,
+        Write(string.Concat(Enumerable.Repeat(" ", width)), style.TextColor,
             style.BackgroundColor);
     }
 
@@ -19,7 +19,7 @@ public static class Gui
 
     public static void SpaceVertical(int height, GuiStyle style)
     {
-        MonsterTradingCardsGame.Write(string.Concat(Enumerable.Repeat("\n", height)), style.TextColor, style.BackgroundColor);
+        Write(string.Concat(Enumerable.Repeat("\n", height)), style.TextColor, style.BackgroundColor);
     }
 
     public static void SpaceVertical(int height)
@@ -31,7 +31,7 @@ public static class Gui
     {
         SpaceHorizontal(style.Offset);
 
-        MonsterTradingCardsGame.Write(
+        Write(
             $"[{text}]",
             selected ? style.SelectedTextColor : style.TextColor,
             selected ? style.SelectedBackgroundColor : style.BackgroundColor
@@ -46,7 +46,7 @@ public static class Gui
     public static void TextField(string text, bool selected, int length, GuiStyle style)
     {
         SpaceHorizontal(style.Offset);
-        MonsterTradingCardsGame.WriteLine(
+        WriteLine(
             $"[{text}{String.Concat(Enumerable.Repeat("_", length - text.Length))}]",
             selected ? style.SelectedTextColor : style.TextColor,
             selected ? style.SelectedBackgroundColor : style.BackgroundColor
@@ -56,5 +56,26 @@ public static class Gui
     public static void TextField(string text, bool selected, int length)
     {
         TextField(text, selected, length, new GuiStyle());
+    }
+    
+    public static void WriteLine(string message, ConsoleColor textColor = ConsoleColor.White,
+        ConsoleColor backgroundColor = ConsoleColor.Black)
+    {
+        WriteInternal(message, textColor, backgroundColor, Console.WriteLine);
+    }
+
+    public static void Write(string message, ConsoleColor textColor = ConsoleColor.White,
+        ConsoleColor backgroundColor = ConsoleColor.Black)
+    {
+        WriteInternal(message, textColor, backgroundColor, Console.Write);
+    }
+
+    private static void WriteInternal(string message, ConsoleColor textColor, ConsoleColor backgroundColor,
+        Action<string> write)
+    {
+        Console.ForegroundColor = textColor;
+        Console.BackgroundColor = backgroundColor;
+        write(message);
+        Console.ResetColor();
     }
 }
