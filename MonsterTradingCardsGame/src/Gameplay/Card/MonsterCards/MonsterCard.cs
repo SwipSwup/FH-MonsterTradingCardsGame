@@ -1,5 +1,3 @@
-using MonsterTradingCardsGame.Gameplay.Card.SpellCards;
-
 namespace MonsterTradingCardsGame.Gameplay.Card.MonsterCards;
 
 public class MonsterCard : Card

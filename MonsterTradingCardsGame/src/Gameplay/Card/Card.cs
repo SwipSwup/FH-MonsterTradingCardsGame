@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using MonsterTradingCardsGame.Gameplay.Card.MonsterCards;
 
 namespace MonsterTradingCardsGame.Gameplay.Card;
 
@@ -12,6 +11,7 @@ public abstract class Card
     public Element Element { get; private set; }
     
     protected Dictionary<Specie, float> DamageModifiers = new();
+    
     protected Card(string name, float damage, Element element)
     {
         Name = name;

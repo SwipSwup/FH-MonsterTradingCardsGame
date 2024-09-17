@@ -11,7 +11,7 @@ public static class CardFactory
 
         if (element == Element.Water)
         {
-            card.AddAttackModifier(Specie.Knights, float.MaxValue);
+            card.AddAttackModifier(Specie.Knight, float.MaxValue);
         }
 
         card.AddAttackModifier(Specie.Kraken, 0f);
@@ -35,7 +35,7 @@ public static class CardFactory
                 card.AddAttackModifier(Specie.Wizard, 0f);
                 break;
             }
-            case Specie.FireElves:
+            case Specie.FireElv:
             {
                 card.AddAttackModifier(Specie.Dragon, 0f);
                 break;

@@ -6,7 +6,7 @@ public enum Specie
     Dragon, 
     Wizard,
     Ork, 
-    Knights, 
+    Knight, 
     Kraken, 
-    FireElves
+    FireElv
 }

@@ -62,7 +62,8 @@
         <Compile Include="src\Gameplay\Scenes\RegisterScene.cs" />
         <Compile Include="src\Gameplay\Scenes\StartScene.cs" />
         <Compile Include="src\Gameplay\User\User.cs" />
-        <Compile Include="src\Gameplay\User\UserData.cs" />
+        <Compile Include="src\Gameplay\User\UserCredentials.cs" />
+        <Compile Include="src\Gameplay\User\UserStats.cs" />
         <Compile Include="src\MonsterTradingCardsGame.cs" />
     </ItemGroup>
     <ItemGroup>
