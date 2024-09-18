@@ -11,7 +11,7 @@ public static class CardFactory
 
         if (element == Element.Water)
         {
-            card.AddAttackModifier(Specie.Knight, float.MaxValue);
+            card.AddAttackModifier(Specie.Knight, 999999f);
         }
 
         card.AddAttackModifier(Specie.Kraken, 0f);

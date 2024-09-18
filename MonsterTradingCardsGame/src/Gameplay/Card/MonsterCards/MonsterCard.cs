@@ -12,9 +12,7 @@ public class MonsterCard : Card
     public override float CalculateDamage(Card card)
     {
         if (card is MonsterCard monsterCard)
-        {
             return DamageModifiers.TryGetValue(monsterCard.Specie, out var modifier) ? Damage * modifier : Damage;
-        }
         
         return Damage;
     }
