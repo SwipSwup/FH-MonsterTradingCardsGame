@@ -17,13 +17,11 @@ namespace MonsterTradingCardsGame
         {
             InitializeConsole(width, height);
             //LoadScene(new StartScene());
-            LoadScene(new DashboardScene());
+            LoadScene(new StartScene());
         }
 
         public void Start()
         {
-            char input;
-
             while (true)
             {
                 _activeScene.Update();

@@ -1,6 +1,6 @@
 namespace MonsterTradingCardsGame.Gameplay.Card;
 
-public enum Specie
+public enum Species
 {
     Goblin, 
     Dragon, 

@@ -2,17 +2,17 @@ namespace MonsterTradingCardsGame.Gameplay.Card.MonsterCards;
 
 public class MonsterCard : Card
 {
-    public Specie Specie { get; }
+    public Species Species { get; private set; }
 
-    public MonsterCard(string name, float damage, Element element, Specie specie) : base(name, damage, element)
+    public MonsterCard(string name, float damage, Element element, Species species) : base(name, damage, element)
     {
-        Specie = specie;
+        Species = species;
     }
 
     public override float CalculateDamage(Card card)
     {
         if (card is MonsterCard monsterCard)
-            return DamageModifiers.TryGetValue(monsterCard.Specie, out var modifier) ? Damage * modifier : Damage;
+            return DamageModifiers.TryGetValue(monsterCard.Species, out float modifier) ? Damage * modifier : Damage;
         
         return Damage;
     }

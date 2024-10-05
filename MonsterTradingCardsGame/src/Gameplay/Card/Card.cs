@@ -10,7 +10,7 @@ public abstract class Card
 
     public Element Element { get; private set; }
     
-    protected Dictionary<Specie, float> DamageModifiers = new();
+    protected Dictionary<Species, float> DamageModifiers = new();
     
     protected Card(string name, float damage, Element element)
     {
@@ -19,9 +19,9 @@ public abstract class Card
         Element = element;
     }
 
-    public void AddAttackModifier(Specie specie, float modifier)
+    public void AddAttackModifier(Species species, float modifier)
     {
-        DamageModifiers.Add(specie, modifier);
+        DamageModifiers.Add(species, modifier);
     }
 
     public abstract float CalculateDamage(Card card);

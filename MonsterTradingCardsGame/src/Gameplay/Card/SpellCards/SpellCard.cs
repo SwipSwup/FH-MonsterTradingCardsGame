@@ -19,7 +19,7 @@ public class SpellCard : Card
     public override float CalculateDamage(Card card)
     {
         if (card is MonsterCard monsterCard)
-            return DamageModifiers.TryGetValue(monsterCard.Specie, out var modifier) ? Damage * modifier : Damage;
+            return DamageModifiers.TryGetValue(monsterCard.Species, out float modifier) ? Damage * modifier : Damage;
 
         if (card.Element == Element)
             return Damage;

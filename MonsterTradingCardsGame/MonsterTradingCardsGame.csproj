@@ -54,7 +54,7 @@
         <Compile Include="src\Gameplay\Card\CardFactory.cs" />
         <Compile Include="src\Gameplay\Card\Element.cs" />
         <Compile Include="src\Gameplay\Card\MonsterCards\MonsterCard.cs" />
-        <Compile Include="src\Gameplay\Card\Specie.cs" />
+        <Compile Include="src\Gameplay\Card\Species.cs" />
         <Compile Include="src\Gameplay\Card\SpellCards\SpellCard.cs" />
         <Compile Include="src\Gameplay\Scenes\DashboardScene.cs" />
 
@@ -67,7 +67,7 @@
         <Compile Include="src\MonsterTradingCardsGame.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="src\Core\Networking\" />
+      <Folder Include="src\Core\Networking\Server\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

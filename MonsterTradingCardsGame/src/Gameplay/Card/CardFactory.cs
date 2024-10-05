@@ -11,33 +11,33 @@ public static class CardFactory
 
         if (element == Element.Water)
         {
-            card.AddAttackModifier(Specie.Knight, 999999f);
+            card.AddAttackModifier(Species.Knight, 999999f);
         }
 
-        card.AddAttackModifier(Specie.Kraken, 0f);
+        card.AddAttackModifier(Species.Kraken, 0f);
 
         return card;
     }
 
-    public static MonsterCard GetMonsterCard(string name, float damage, Element element, Specie specie)
+    public static MonsterCard GetMonsterCard(string name, float damage, Element element, Species species)
     {
-        MonsterCard card = new MonsterCard(name, damage, element, specie);
+        MonsterCard card = new MonsterCard(name, damage, element, species);
 
-        switch (specie)
+        switch (species)
         {
-            case Specie.Goblin:
+            case Species.Goblin:
             {
-                card.AddAttackModifier(Specie.Dragon, 0f);
+                card.AddAttackModifier(Species.Dragon, 0f);
                 break;
             }
-            case Specie.Ork:
+            case Species.Ork:
             {
-                card.AddAttackModifier(Specie.Wizard, 0f);
+                card.AddAttackModifier(Species.Wizard, 0f);
                 break;
             }
-            case Specie.FireElv:
+            case Species.FireElv:
             {
-                card.AddAttackModifier(Specie.Dragon, 0f);
+                card.AddAttackModifier(Species.Dragon, 0f);
                 break;
             }
         }
