@@ -44,6 +44,13 @@
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="src\Core\Input\Input.cs" />
+        <Compile Include="src\Core\Networking\Http\HttpMethod.cs" />
+        <Compile Include="src\Core\Networking\Http\HttpRequest.cs" />
+        <Compile Include="src\Core\Networking\Http\HttpUtilities.cs" />
+        <Compile Include="src\Core\Networking\Server\RequestHandler.cs" />
+        <Compile Include="src\Core\Networking\Server\Router\Route.cs" />
+        <Compile Include="src\Core\Networking\Server\Router\Router.cs" />
+        <Compile Include="src\Core\Networking\Server\Server.cs" />
         <Compile Include="src\Core\Scene\Scene.cs" />
 
         <Compile Include="src\Core\Settings\GameSettings.cs" />
@@ -65,9 +72,6 @@
         <Compile Include="src\Gameplay\User\UserCredentials.cs" />
         <Compile Include="src\Gameplay\User\UserStats.cs" />
         <Compile Include="src\MonsterTradingCardsGame.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="src\Core\Networking\Server\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
