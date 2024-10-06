@@ -29,7 +29,7 @@ public static class HttpUtilities
     {
         try
         {
-            string[] lines = request.Split(["\r\n"], StringSplitOptions.None);
+            string[] lines = request.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             string[] requestLine = lines[0].Split(' ');
             string url = requestLine[1];
             string query = url.Contains("?") ? url.Split('?')[1] : string.Empty;
@@ -38,7 +38,7 @@ public static class HttpUtilities
             return new HttpRequest
             {
                 Method = (HttpMethod) Enum.Parse(typeof(HttpMethod), requestLine[0], true),
-                Path = url.Split('?')[0],
+                Path = url.Contains("?") ? url.Split('?')[0] : url,
                 QueryParameters = ExtractQueryParameters(query),
                 Body = emptyLineIndex >= 0 && emptyLineIndex + 1 < lines.Length
                     ? string.Join("\r\n", lines, emptyLineIndex + 1, lines.Length - emptyLineIndex - 1)

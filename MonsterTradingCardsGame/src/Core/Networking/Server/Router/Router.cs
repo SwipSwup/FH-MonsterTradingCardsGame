@@ -7,7 +7,7 @@ namespace MonsterTradingCardsGame.Core.Networking.Server.Router;
 
 public class Router
 {
-    public delegate Task<string> RouterHandler(HttpRequest request);
+    //public delegate Task<string> RouterHandler(HttpRequest request);
 
     private readonly Dictionary<HttpMethod, List<Route>> _routes = new();
 
@@ -15,15 +15,15 @@ public class Router
     {
     }
 
-    public void RegisterRoute(HttpMethod httpMethod, string path, RouterHandler handler)
+    public void RegisterRoute(HttpMethod httpMethod, string path, Func<HttpRequest, string> handler)
     {
         if (_routes.TryGetValue(httpMethod, out List<Route> r))
             r.Add(new Route(path, handler));
         else
-            _routes.Add(httpMethod, [new Route(path, handler)]);
+            _routes.Add(httpMethod, new List<Route> {new(path, handler)});
     }
 
-    public bool TryGetHandler(HttpMethod method, string path, out RouterHandler handler)
+    public bool TryGetHandler(HttpMethod method, string path, out Func<HttpRequest, string> handler)
     {
         if (_routes.TryGetValue(method, out List<Route> r))
         {

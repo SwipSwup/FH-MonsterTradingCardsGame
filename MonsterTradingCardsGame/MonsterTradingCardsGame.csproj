@@ -47,7 +47,9 @@
         <Compile Include="src\Core\Networking\Http\HttpMethod.cs" />
         <Compile Include="src\Core\Networking\Http\HttpRequest.cs" />
         <Compile Include="src\Core\Networking\Http\HttpUtilities.cs" />
-        <Compile Include="src\Core\Networking\Server\RequestHandler.cs" />
+        <Compile Include="src\Core\Networking\Server\Repositories\CardRepository.cs" />
+        <Compile Include="src\Core\Networking\Server\Repositories\IRepository.cs" />
+        <Compile Include="src\Core\Networking\Server\RequestHandler\RequestHandler.cs" />
         <Compile Include="src\Core\Networking\Server\Router\Route.cs" />
         <Compile Include="src\Core\Networking\Server\Router\Router.cs" />
         <Compile Include="src\Core\Networking\Server\Server.cs" />
