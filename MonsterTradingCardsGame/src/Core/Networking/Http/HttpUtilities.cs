@@ -55,12 +55,13 @@ public static class HttpUtilities
     {
         return GenerateResponse(statusCode, $"{{\"error\": \"{error}\", \"message\": \"{message}\"}}");
     }
-
+    
     public static string GenerateResponse(HttpStatusCode statusCode, string content)
     {
-        string statusLine = $"HTTP/1.1 {(int)statusCode} {statusCode}\r\n";
-        string headers =
-            $"Content-Length: {Encoding.UTF8.GetByteCount(content)}\r\nContent-Type: application/json\r\n\r\n";
-        return statusLine + headers + content;
+        return $"HTTP/1.1 {(int)statusCode} {statusCode}\r\n" +
+               $"Content-Type: application/json\r\n" +
+               $"Content-Length: {Encoding.UTF8.GetByteCount(content)}\r\n" +
+               $"Connection: close\r\n\r\n" +
+               content;
     }
 }

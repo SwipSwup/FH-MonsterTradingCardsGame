@@ -7,7 +7,7 @@ namespace MonsterTradingCardsGame.Core.Networking.Server.RequestHandler;
 
 public class RequestHandler
 {
-    public string HandleRequest(HttpRequest? request)
+    /*public string HandleRequest(HttpRequest? request)
     {
         if (request == null)
         {
@@ -29,9 +29,9 @@ public class RequestHandler
         {
             return HttpUtilities.GenerateErrorResponse(HttpStatusCode.NotFound, "Not Found", "The requested resource was not found.");
         }
-    }
+    }*/
     
-    /*
+    
     public async Task<string> HandleRequestAsync(HttpRequest? request)
     {
         if (request == null)
@@ -54,5 +54,5 @@ public class RequestHandler
         {
             return HttpUtilities.GenerateErrorResponse(HttpStatusCode.NotFound, "Not Found", "The requested resource was not found.");
         }
-    }*/
+    }
 }

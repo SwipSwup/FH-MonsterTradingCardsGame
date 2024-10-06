@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace MonsterTradingCardsGame.Gameplay.Card;
 
-public abstract class Card
+public abstract class Card 
 {
     public string Name { get; private set; }
 

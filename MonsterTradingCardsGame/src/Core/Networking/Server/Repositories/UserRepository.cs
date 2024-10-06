@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using MonsterTradingCardsGame.Gameplay.User;
+
+namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
+
+public class UserRepository : IRepository<User>
+{
+    Dictionary<uint, User> _users = new();
+    
+    public Task<User> GetByIdAsync(uint id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<User> GetUserByUsernameAsync(string username)
+    {
+        
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<User>> GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task AddAsync(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAsync(uint id)
+    {
+        throw new NotImplementedException();
+    }
+}

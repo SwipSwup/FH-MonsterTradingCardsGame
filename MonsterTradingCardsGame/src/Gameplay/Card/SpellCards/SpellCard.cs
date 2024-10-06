@@ -11,10 +11,8 @@ public class SpellCard : Card
         { Element.Fire, Element.Normal },
         { Element.Normal, Element.Water }
     };
-    
-    public SpellCard(string name, float damage, Element element) : base(name, damage, element)
-    {
-    }
+
+    public SpellCard(string name, float damage, Element element) : base(name, damage, element) {}
 
     public override float CalculateDamage(Card card)
     {

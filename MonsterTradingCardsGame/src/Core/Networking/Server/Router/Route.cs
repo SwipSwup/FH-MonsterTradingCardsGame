@@ -8,10 +8,10 @@ public struct Route
 {
     public string Path { get; private set; }
     
-    //public Router.RouterHandler Handler { get; private set; }
-    public Func<HttpRequest, string> Handler { get; private set; }
+    public Router.RouteHandler Handler { get; private set; }
+    //public Func<HttpRequest, string> Handler { get; private set; }
 
-    public Route(string path, Func<HttpRequest, string> handler)
+    public Route(string path, Router.RouteHandler handler)
     {
         Path = path;
         Handler = handler;

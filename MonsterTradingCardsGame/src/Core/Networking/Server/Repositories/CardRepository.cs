@@ -7,7 +7,7 @@ namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 
 public class CardRepository : IRepository<Card>
 {
-    Task<IEnumerable<Card>> IRepository<Card>.GetAllAsync()
+    public Task<IEnumerable<Card>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
@@ -22,12 +22,12 @@ public class CardRepository : IRepository<Card>
         throw new NotImplementedException();
     }
 
-    public Task DeleteAsync(Guid id)
+    public Task DeleteAsync(uint id)
     {
         throw new NotImplementedException();
     }
 
-    Task<Card> IRepository<Card>.GetByIdAsync(Guid id)
+    public Task<Card> GetByIdAsync(uint id)
     {
         throw new NotImplementedException();
     }
