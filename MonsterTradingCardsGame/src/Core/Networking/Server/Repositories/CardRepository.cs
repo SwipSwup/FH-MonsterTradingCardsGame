@@ -5,7 +5,7 @@ using MonsterTradingCardsGame.Gameplay.Card;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 
-public class CardRepository : IRepository<Card>
+public class CardRepository : IRepository<uint, Card>
 {
     public Task<IEnumerable<Card>> GetAllAsync()
     {

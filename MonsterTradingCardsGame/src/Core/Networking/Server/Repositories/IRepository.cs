@@ -1,18 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MonsterTradingCardsGame.Gameplay.User;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 
-public interface IRepository<T>
+public interface IRepository<in T, T2>
 {
-    Task<T> GetByIdAsync(uint id);
+    public Task<T2?> GetByIdAsync(T id);
     
-    Task<IEnumerable<T>> GetAllAsync();
+    public Task<IEnumerable<T2>> GetAllAsync();
     
-    Task AddAsync(T entity);
+    public Task AddAsync(T2 entity);
     
-    Task UpdateAsync(T entity);
+    public Task UpdateAsync(T2 entity);
     
-    Task DeleteAsync(uint id);
+    public Task DeleteAsync(T id);
 }

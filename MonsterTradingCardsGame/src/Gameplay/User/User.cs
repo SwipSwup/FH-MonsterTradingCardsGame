@@ -5,6 +5,8 @@ namespace MonsterTradingCardsGame.Gameplay.User;
 
 public class User
 {
+    public Guid Id { get; set; }
+    
     public List<StackCardWrapper> Stack { get; private set; } = new();
 
     public List<int> Deck { get; private set; } = new();

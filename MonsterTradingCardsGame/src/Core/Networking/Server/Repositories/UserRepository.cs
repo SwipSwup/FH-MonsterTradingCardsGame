@@ -5,9 +5,10 @@ using MonsterTradingCardsGame.Gameplay.User;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 
-public class UserRepository : IRepository<User>
+public class UserRepository : IRepository<uint, User>
 {
     Dictionary<uint, User> _users = new();
+    
     
     public Task<User> GetByIdAsync(uint id)
     {

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -29,24 +31,38 @@ public static class HttpUtilities
     {
         try
         {
-            string[] lines = request.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = request.Split(new[] { "\r\n" }, StringSplitOptions.None);
             string[] requestLine = lines[0].Split(' ');
-            string url = requestLine[1];
-            string query = url.Contains("?") ? url.Split('?')[1] : string.Empty;
-            int emptyLineIndex = Array.IndexOf(lines, "");
+
+            Dictionary<string, string> headers = new();
+            int bodyIndex = 0;
+            for (int i = 1; i < lines.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(lines[i]))
+                {
+                    bodyIndex = i + 1;
+                    break;
+                }
+
+                string[] headerParts = lines[i].Split(new[] { ": " }, StringSplitOptions.None);
+                if (headerParts.Length == 2)
+                {
+                    headers[headerParts[0]] = headerParts[1];
+                }
+            }
 
             return new HttpRequest
             {
-                Method = (HttpMethod) Enum.Parse(typeof(HttpMethod), requestLine[0], true),
-                Path = url.Contains("?") ? url.Split('?')[0] : url,
-                QueryParameters = ExtractQueryParameters(query),
-                Body = emptyLineIndex >= 0 && emptyLineIndex + 1 < lines.Length
-                    ? string.Join("\r\n", lines, emptyLineIndex + 1, lines.Length - emptyLineIndex - 1)
-                    : string.Empty
+                Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), requestLine[0], true),
+                Path = requestLine[1].Split('?')[0],
+                Headers = headers,
+                Body = new MemoryStream(Encoding.UTF8.GetBytes(bodyIndex < lines.Length ? string.Join("\r\n", lines.Skip(bodyIndex)) : string.Empty)),
+                QueryParameters = ExtractQueryParameters(requestLine[1])
             };
         }
-        catch
+        catch (Exception e)
         {
+            Console.WriteLine(e.StackTrace);
             return null;
         }
     }
@@ -55,7 +71,7 @@ public static class HttpUtilities
     {
         return GenerateResponse(statusCode, $"{{\"error\": \"{error}\", \"message\": \"{message}\"}}");
     }
-    
+
     public static string GenerateResponse(HttpStatusCode statusCode, string content)
     {
         return $"HTTP/1.1 {(int)statusCode} {statusCode}\r\n" +
