@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Net;
 using System.Text.Json;
@@ -8,9 +7,9 @@ using MonsterTradingCardsGame.Core.Networking.Http;
 using MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 using MonsterTradingCardsGame.Core.Networking.Server.Utilities;
 
-namespace MonsterTradingCardsGame.Core.Networking.Server.Handler;
+namespace MonsterTradingCardsGame.Core.Networking.Server.Controller;
 
-public class UserController
+public static class UserController
 {
     public static async Task<string> RegisterUserAsync(HttpRequest request)
     {

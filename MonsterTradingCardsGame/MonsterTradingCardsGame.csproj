@@ -101,7 +101,7 @@
         <Compile Include="src\Core\Networking\Http\HttpMethod.cs" />
         <Compile Include="src\Core\Networking\Http\HttpRequest.cs" />
         <Compile Include="src\Core\Networking\Http\HttpUtilities.cs" />
-        <Compile Include="src\Core\Networking\Server\Handler\UserController.cs" />
+        <Compile Include="src\Core\Networking\Server\Controller\UserController.cs" />
         <Compile Include="src\Core\Networking\Server\Repositories\CardRepository.cs" />
         <Compile Include="src\Core\Networking\Server\Repositories\IRepository.cs" />
         <Compile Include="src\Core\Networking\Server\Repositories\RepositoryManager.cs" />

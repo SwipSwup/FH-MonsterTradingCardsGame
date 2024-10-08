@@ -38,16 +38,16 @@ public static class HttpUtilities
             int bodyIndex = 0;
             for (int i = 1; i < lines.Length; i++)
             {
-                if (string.IsNullOrWhiteSpace(lines[i]))
-                {
-                    bodyIndex = i + 1;
-                    break;
-                }
-
                 string[] headerParts = lines[i].Split(new[] { ": " }, StringSplitOptions.None);
                 if (headerParts.Length == 2)
                 {
                     headers[headerParts[0]] = headerParts[1];
+                }
+                
+                if (string.IsNullOrWhiteSpace(lines[i]))
+                {
+                    bodyIndex = i + 1;
+                    break;
                 }
             }
 
@@ -60,9 +60,8 @@ public static class HttpUtilities
                 QueryParameters = ExtractQueryParameters(requestLine[1])
             };
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            Console.WriteLine(e.StackTrace);
             return null;
         }
     }

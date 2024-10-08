@@ -7,7 +7,7 @@ namespace MonsterTradingCardsGame.Core.Networking.Server.Repositories;
 
 public interface IRepository<in T, T2>
 {
-    public Task<T2?> GetByIdAsync(T id);
+    public Task<T2> GetByIdAsync(T id);
     
     public Task<IEnumerable<T2>> GetAllAsync();
     

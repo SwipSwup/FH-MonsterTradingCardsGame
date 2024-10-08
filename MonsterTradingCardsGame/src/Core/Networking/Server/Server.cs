@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using MonsterTradingCardsGame.Core.Networking.Http;
+using MonsterTradingCardsGame.Core.Networking.Server.Controller;
 using MonsterTradingCardsGame.Core.Networking.Server.Handler;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server;
