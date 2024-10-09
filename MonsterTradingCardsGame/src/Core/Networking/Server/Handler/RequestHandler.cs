@@ -2,8 +2,10 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using MonsterTradingCardsGame.Core.Networking.Http;
+using MonsterTradingCardsGame.Core.Networking.Server.Routing;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server.Handler;
+
 
 public class RequestHandler
 {
@@ -15,15 +17,15 @@ public class RequestHandler
             return HttpUtilities.GenerateErrorResponse(HttpStatusCode.BadRequest, "Bad Request", "The request could not be parsed.");
         }
 
-        if (Server.Router.TryGetHandler(request.Value.Method, request.Value.Path, out var handler))
+        if (Server.HttpRouter.TryGetHandler(request.Value.Method, request.Value.Path, out HttpRouter.RouteHandler handler))
         {
             try
             {
                 return await handler((HttpRequest)request);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                return HttpUtilities.GenerateErrorResponse(HttpStatusCode.InternalServerError, "Internal Server Error", $"{handler.Method.DeclaringType}: {ex.Message}" );
+                return HttpUtilities.GenerateErrorResponse(HttpStatusCode.InternalServerError, "Internal Server Error", $"{handler.Method.DeclaringType}: {exception.Message}" );
             }
         }
 

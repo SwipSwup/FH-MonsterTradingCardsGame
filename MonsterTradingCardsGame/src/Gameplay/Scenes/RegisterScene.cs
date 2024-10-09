@@ -1,15 +1,21 @@
 using System;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 using MonsterTradingCardsGame.Core.Input;
+using MonsterTradingCardsGame.Core.Networking.DTOs.Authentication;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.Settings;
 using MonsterTradingCardsGame.Core.UI;
+using MonsterTradingCardsGame.Gameplay.Client;
 
 namespace MonsterTradingCardsGame.Gameplay.Scenes
 {
     public class RegisterScene : Scene
     {
-
         private int _horizontalMenuIndex;
         private int _verticalMenuIndex;
 
@@ -77,7 +83,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             }
         }
 
-        private void OnMenuSpace(ConsoleKeyInfo keyInfo)
+        private async void OnMenuSpace(ConsoleKeyInfo keyInfo)
         {
             if (_horizontalMenuIndex != 3)
                 return;
@@ -85,6 +91,25 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
             switch (_verticalMenuIndex)
             {
                 case 0:
+                    HttpResponseMessage response = await ServerClientManager.SendPostRequest(
+                        "/register",
+                        JsonSerializer.Serialize(
+                            new UserCredentialsDto
+                            {
+                                Password = _password,
+                                Username = _username
+                            })
+                    );
+
+                    Console.WriteLine(response.StatusCode);
+                    
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ServerClientManager.Token = JsonSerializer.Deserialize<AuthenticationResponseDto>(await response.Content.ReadAsStringAsync()).Token;
+                        
+                        Game.LoadScene(new DashboardScene());
+                    }
+
                     return;
                 case 1:
                     Game.LoadScene(new StartScene());
@@ -168,7 +193,7 @@ namespace MonsterTradingCardsGame.Gameplay.Scenes
                 GameSettings.MAX_PASSWORD_LENGTH,
                 new GuiStyle { Offset = 8 }
             );
-            
+
             Gui.SpaceVertical(1);
             Gui.SpaceHorizontal(8);
             Gui.Button("Register", _horizontalMenuIndex == 3 && _verticalMenuIndex == 0);

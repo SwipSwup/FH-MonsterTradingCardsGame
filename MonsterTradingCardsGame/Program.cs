@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using MonsterTradingCardsGame.Core.Networking.Server;
 
 namespace MonsterTradingCardsGame
@@ -7,9 +8,15 @@ namespace MonsterTradingCardsGame
     {
         public static void Main(string[] args)
         {
-            //MonsterTradingCardsGame game = new MonsterTradingCardsGame(102, 50);
-            //game.Start();
-            new Server().Start();
+            if (args[0] == "Server")
+            {
+                new Server().Start();
+            }
+            else
+            {
+                MonsterTradingCardsGame game = new MonsterTradingCardsGame(102, 50);
+                game.Start();
+            }
         }
     }
 }

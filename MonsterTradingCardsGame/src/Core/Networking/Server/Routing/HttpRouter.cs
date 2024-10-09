@@ -1,17 +1,16 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MonsterTradingCardsGame.Core.Networking.Http;
 
-namespace MonsterTradingCardsGame.Core.Networking.Server.Router;
+namespace MonsterTradingCardsGame.Core.Networking.Server.Routing;
 
-public class Router
+public class HttpRouter
 {
     public delegate Task<string> RouteHandler(HttpRequest request);
 
     private readonly Dictionary<HttpMethod, List<Route>> _routes = new();
 
-    public Router()
+    public HttpRouter()
     {
     }
 

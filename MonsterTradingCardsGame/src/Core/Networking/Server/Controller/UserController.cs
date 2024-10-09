@@ -44,14 +44,14 @@ public static class UserController
         userCredentialsDto.Password = PasswordUtilities.HashPassword(userCredentialsDto.Password);
         await RepositoryManager.UserCredentialsRepository.AddAsync(userCredentialsDto);
 
-        AuthenticationResponse response = new AuthenticationResponse
+        AuthenticationResponseDto responseDto = new AuthenticationResponseDto
         {
             Success = true,
             Message = "Registration Success",
             Token = TokenUtilities.GenerateJwtToken(userCredentialsDto.Username)
         };
 
-        return HttpUtilities.GenerateResponse(HttpStatusCode.Created, JsonSerializer.Serialize(response));
+        return HttpUtilities.GenerateResponse(HttpStatusCode.Created, JsonSerializer.Serialize(responseDto));
     }
 
     public static async Task<string> LoginUserAsync(HttpRequest request)
@@ -79,7 +79,7 @@ public static class UserController
 
         if (databaseUserCredentials == null)
         {
-            return HttpUtilities.GenerateErrorResponse(HttpStatusCode.NotFound, "Not Found", "User does not exist.");
+            return HttpUtilities.GenerateErrorResponse(HttpStatusCode.NotFound, "User Not Found", "User does not exist.");
         }
 
         if (!PasswordUtilities.VerifyPassword(userCredentialsDto.Password, databaseUserCredentials.Value.Password))
@@ -88,13 +88,13 @@ public static class UserController
                 "Password does not match.");
         }
 
-        AuthenticationResponse response = new AuthenticationResponse
+        AuthenticationResponseDto responseDto = new AuthenticationResponseDto
         {
             Success = true,
             Message = "Login Success",
             Token = TokenUtilities.GenerateJwtToken(userCredentialsDto.Username)
         };
 
-        return HttpUtilities.GenerateResponse(HttpStatusCode.OK, JsonSerializer.Serialize(response));
+        return HttpUtilities.GenerateResponse(HttpStatusCode.OK, JsonSerializer.Serialize(responseDto));
     }
 }

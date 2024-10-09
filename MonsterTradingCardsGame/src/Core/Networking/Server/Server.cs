@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using MonsterTradingCardsGame.Core.Networking.Http;
 using MonsterTradingCardsGame.Core.Networking.Server.Controller;
 using MonsterTradingCardsGame.Core.Networking.Server.Handler;
+using MonsterTradingCardsGame.Core.Networking.Server.Routing;
 
 namespace MonsterTradingCardsGame.Core.Networking.Server;
 
@@ -18,14 +19,14 @@ public class Server
     private readonly int _port;
     private RequestHandler _requestHandler;
 
-    public static Router.Router Router { get; private set; }
+    public static HttpRouter HttpRouter { get; private set; }
 
     private static Dictionary<string, string> _registeredTokens = new();
 
     public Server(int port = 8080)
     {
         _requestHandler = new RequestHandler();
-        Router = new Router.Router();
+        HttpRouter = new HttpRouter();
         _port = port;
 
         RegisterRoutes();
@@ -33,15 +34,14 @@ public class Server
 
     private void RegisterRoutes()
     {
-        Router.RegisterRoute(HttpMethod.GET, "/test", async request =>
+        HttpRouter.RegisterRoute(HttpMethod.GET, "/test", async request =>
         {
             await Task.CompletedTask;
             return HttpUtilities.GenerateResponse(HttpStatusCode.OK, "test");
         });
         
-        Router.RegisterRoute(HttpMethod.POST, "/register", UserController.RegisterUserAsync);
-        Router.RegisterRoute(HttpMethod.POST, "/login", UserController.LoginUserAsync);
-        
+        HttpRouter.RegisterRoute(HttpMethod.POST, "/register", UserController.RegisterUserAsync);
+        HttpRouter.RegisterRoute(HttpMethod.POST, "/login", UserController.LoginUserAsync);
     }
 
     public void Start()
