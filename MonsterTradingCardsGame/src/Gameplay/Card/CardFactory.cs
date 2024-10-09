@@ -30,7 +30,7 @@ public static class CardFactory
                 card.AddAttackModifier(Species.Dragon, 0f);
                 break;
             }
-            case Species.Ork:
+            case Species.Orc:
             {
                 card.AddAttackModifier(Species.Wizard, 0f);
                 break;

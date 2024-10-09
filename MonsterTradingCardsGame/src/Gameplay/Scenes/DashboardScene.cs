@@ -26,16 +26,20 @@ public class DashboardScene : Scene
 
     private void DrawStatBar()
     {
-        Gui.Write(" Coins: ", ConsoleColor.DarkYellow);       
+        /*Gui.Write(" Coins: ", ConsoleColor.DarkYellow);       
         Gui.Write("999");
         Gui.SpaceHorizontal(8);
         Gui.Write("MMR: ", ConsoleColor.Cyan);       
-        Gui.Write("999");
+        Gui.Write("999");*/
         
-        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 0, Y = 10});
-        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 20, Y = 10});
-        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 40, Y = 10});
-        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 60, Y = 10});
-        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 80, Y = 10});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 2, Y = 0});
+        Gui.DrawAt(MonsterAssets.Wizard, new Coord {X = 3, Y = 1});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 22, Y = 0});
+        Gui.DrawAt(MonsterAssets.Knight, new Coord {X = 23, Y = 1});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 42, Y = 0});
+        Gui.DrawAt(MonsterAssets.Dragon, new Coord {X = 43, Y = 1});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 62, Y = 0});
+        Gui.DrawAt(MonsterAssets.Kraken, new Coord {X = 63, Y = 1});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 82, Y = 0});
     }
 }
