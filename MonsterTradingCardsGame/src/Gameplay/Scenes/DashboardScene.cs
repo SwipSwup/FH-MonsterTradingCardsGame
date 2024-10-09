@@ -1,4 +1,5 @@
 using System;
+using MonsterTradingCardsGame.Assets.Cards;
 using MonsterTradingCardsGame.Core.Input;
 using MonsterTradingCardsGame.Core.Scene;
 using MonsterTradingCardsGame.Core.UI;
@@ -30,5 +31,11 @@ public class DashboardScene : Scene
         Gui.SpaceHorizontal(8);
         Gui.Write("MMR: ", ConsoleColor.Cyan);       
         Gui.Write("999");
+        
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 0, Y = 10});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 20, Y = 10});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 40, Y = 10});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 60, Y = 10});
+        Gui.DrawAt(CardAssets.CardBody, new Coord {X = 80, Y = 10});
     }
 }

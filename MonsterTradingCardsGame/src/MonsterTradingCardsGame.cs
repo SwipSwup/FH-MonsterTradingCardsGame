@@ -17,7 +17,7 @@ namespace MonsterTradingCardsGame
         {
             InitializeConsole(width, height);
             //LoadScene(new StartScene());
-            LoadScene(new StartScene());
+            LoadScene(new DashboardScene());
         }
 
         public void Start()

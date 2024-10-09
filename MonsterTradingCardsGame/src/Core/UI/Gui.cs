@@ -43,6 +43,22 @@ public static class Gui
         Button(text, selected, new GuiStyle());
     }
 
+    public static void DrawAt(string text, Coord position, GuiStyle style)
+    {
+        string[] lines = text.Split('\n');
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            Console.SetCursorPosition(position.X, position.Y + i);
+            Write(lines[i], style.TextColor, style.BackgroundColor);
+        }
+    }
+    
+    public static void DrawAt(string text, Coord position)
+    {
+        DrawAt(text, position, new GuiStyle());
+    }
+
     public static void TextField(string text, bool selected, int length, GuiStyle style)
     {
         SpaceHorizontal(style.Offset);
