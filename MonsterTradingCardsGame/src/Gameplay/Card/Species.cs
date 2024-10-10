@@ -8,5 +8,5 @@ public enum Species
     Orc, 
     Knight, 
     Kraken, 
-    FireElv
+    FireElf
 }

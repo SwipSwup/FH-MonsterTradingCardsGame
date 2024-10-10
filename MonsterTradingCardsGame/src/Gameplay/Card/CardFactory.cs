@@ -35,7 +35,7 @@ public static class CardFactory
                 card.AddAttackModifier(Species.Wizard, 0f);
                 break;
             }
-            case Species.FireElv:
+            case Species.FireElf:
             {
                 card.AddAttackModifier(Species.Dragon, 0f);
                 break;
