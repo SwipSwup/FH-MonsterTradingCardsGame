@@ -1,22 +1,5 @@
-﻿using System;
-using System.Net;
-using MonsterTradingCardsGame.Core.Networking.Server;
+﻿// See https://aka.ms/new-console-template for more information
 
-namespace MonsterTradingCardsGame
-{
-    internal class Program
-    {
-        public static void Main(string[] args)
-        {
-            if (args[0] == "Server")
-            {
-                new Server().Start();
-            }
-            else
-            {
-                MonsterTradingCardsGame game = new MonsterTradingCardsGame(102, 50);
-                game.Start();
-            }
-        }
-    }
-}
+using MonsterTradingCardsGame.Networking.Server;
+
+new Server().Start();
