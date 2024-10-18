@@ -1,11 +1,5 @@
-﻿namespace MonsterTradingCardsGame
-{
-    internal class Program
-    {
-        public static void Main(string[] args)
-        {
-            MonsterTradingCardsGame game = new MonsterTradingCardsGame(102, 50);
-            game.Start();
-        }
-    }
-}
+﻿// See https://aka.ms/new-console-template for more information
+
+using MonsterTradingCardsGame.Networking.Server;
+
+new Server().Start();
