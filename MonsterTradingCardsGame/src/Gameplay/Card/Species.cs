@@ -5,7 +5,7 @@ public enum Species
     Goblin, 
     Dragon, 
     Wizard,
-    Ork, 
+    Orc, 
     Knight, 
     Kraken, 
     FireElv

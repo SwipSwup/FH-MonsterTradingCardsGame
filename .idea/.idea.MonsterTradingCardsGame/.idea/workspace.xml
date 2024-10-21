@@ -8,48 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="619339e3-72d0-4faa-8c27-ac85a5af35d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MonsterTradingCardsGameTests/CardFactoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/MonsterTradingCardsGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/MonsterTradingCardsGame.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Input/Input.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/DTOs/Authentication/AuthenticationResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/DTOs/Authentication/AuthenticationResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/DTOs/Authentication/UserCredentialsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/DTOs/Authentication/UserCredentialsDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/DTOs/IResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/DTOs/IResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Http/HttpContentType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Http/HttpContentType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Http/HttpHeader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Http/HttpHeader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Http/HttpMethod.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Http/HttpRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Http/HttpRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Http/HttpUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Http/HttpUtilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Controller/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Handler/RequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Handler/RequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Repositories/CardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Repositories/CardRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Repositories/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Repositories/RepositoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Repositories/RepositoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Repositories/UserCredentialsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Repositories/UserCredentialsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Routing/HttpRouter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Routing/HttpRouter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Routing/Route.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Routing/Route.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Server.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Server.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Utilities/PasswordUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Utilities/PasswordUtilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Networking/Server/Utilities/TokenUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Networking/Server/Utilities/TokenUtilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Scene/Scene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/Settings/GameSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/UI/Gui.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Core/UI/GuiStyle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Client/ServerClientManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Scenes/DashboardScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Scenes/LoginScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Scenes/RegisterScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Scenes/StartScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/MonsterTradingCardsGame.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Card/CardFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Card/CardFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Card/Species.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame/src/Gameplay/Card/Species.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +25,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5811ef557e464aba64816a512273732e915aa4bf45392b54e24ad2e24e035f4/HttpMethod.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6aeecf91adb56078404e1b45c7ca76ebace84592e3322f70f9a7fe1d63d5d3/SHA256Managed.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb38a2c7ae5f130718447670b7e2a9fa3374934ed699fa75d2232b59e78a/SHA256.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/d0/af7ed586/Attribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/323e55ceccd5c33256a49f41acd3c7dfe1d1d3b1c71de70616ce2fbff25fb/NUnitAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d37afa0a984eb534c5fcfa8bef7a1261e4d9df3c0b94eb668f471de2444ee/TestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -74,20 +39,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.MonsterTradingCardsGame.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Networking&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.MonsterTradingCardsGame.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "RiderDotCoverFilteringPageId",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="0efda57a-f0df-4bd8-9f09-d018a07cd410">
     <configuration name="MonsterTradingCardsGame" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -117,11 +83,65 @@
       <updated>1729241895061</updated>
       <workItem from="1729241896782" duration="21000" />
       <workItem from="1729242046703" duration="967000" />
+      <workItem from="1729497240182" duration="33000" />
+      <workItem from="1729497284114" duration="3913000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="82" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="297" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CardFactoryTest 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGameTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CardFactoryTest 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CardFactoryTests 100% 0/36" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGame 15% 319/374" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 22% 319/410" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MonsterTradingCardsGame 15% 319/374" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Program 0% 1/1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
