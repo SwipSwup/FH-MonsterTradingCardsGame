@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MonsterTradingCardsGame\MonsterTradingCardsGame.csproj" />
+      <ProjectReference Include="..\MonsterTradingCardsGame-Server\MonsterTradingCardsGame-Server.csproj" />
     </ItemGroup>
 
 </Project>

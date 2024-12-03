@@ -3,12 +3,13 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MonsterTradingCardsGame_Client</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
+      <Folder Include="src\Input\" />
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace MonsterTradingCardsGame.Gameplay.Card;
 
 public abstract class Card 

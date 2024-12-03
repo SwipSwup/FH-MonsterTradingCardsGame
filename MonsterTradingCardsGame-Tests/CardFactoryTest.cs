@@ -2,7 +2,7 @@ using MonsterTradingCardsGame.Gameplay.Card;
 using MonsterTradingCardsGame.Gameplay.Card.MonsterCards;
 using MonsterTradingCardsGame.Gameplay.Card.SpellCards;
 
-namespace MonsterTradingCardsGameTests;
+namespace MTCG;
 
 [TestFixture]
 public class CardFactoryTest
