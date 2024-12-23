@@ -1,11 +1,19 @@
-namespace MonsterTradingCardsGame_Client.Scene;
-
-public interface IScene
+namespace MonsterTradingCardsGame_Client.Scene
 {
-    public virtual void Update()
+    public interface IScene
     {
-        Draw();
-    }
+        public void Initialize()
+        {
+            
+        }
 
-    protected abstract void Draw();
+        public void Draw()
+        {
+            Console.Clear();
+        }
+
+        public void Update();
+
+        public void Destroy();
+    }
 }

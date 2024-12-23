@@ -1,1 +1,1 @@
-﻿Console.WriteLine("Hello, World!");
+﻿new MonsterTradingCardsGame_Client.MonsterTradingCardsGame(-1, -1).Start();
