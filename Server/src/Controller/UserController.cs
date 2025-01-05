@@ -10,6 +10,11 @@ namespace Server.Controller;
 
 public static class UserController
 {
+    public static async Task<HttpResponseMessage> CreateUserAsync(HttpRequestMessage request)
+    {
+        if(RepositoryManager)
+    }
+    
     public static async Task<HttpResponseMessage> RegisterUserAsync(HttpRequestMessage request)
     {
         //string json = await new StreamReader(request.Body).ReadToEndAsync();
