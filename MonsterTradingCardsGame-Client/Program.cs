@@ -1,1 +1,0 @@
-﻿new MonsterTradingCardsGame_Client.MonsterTradingCardsGame(-1, -1).Start();
