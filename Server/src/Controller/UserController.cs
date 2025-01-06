@@ -3,6 +3,7 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using Server.Repositories;
 using Server.Utilities;
+using Shared.DTOs.Authentication;
 using Shared.Networking.DTOs.Authentication;
 using Shared.Networking.Http;
 
@@ -10,10 +11,12 @@ namespace Server.Controller;
 
 public static class UserController
 {
-    public static async Task<HttpResponseMessage> CreateUserAsync(HttpRequestMessage request)
+    /*public static async Task<HttpResponseMessage> CreateUserAsync(HttpRequestMessage request)
     {
-        if(RepositoryManager)
-    }
+        if(RepositoryManager) {
+                
+        }
+    }*/
     
     public static async Task<HttpResponseMessage> RegisterUserAsync(HttpRequestMessage request)
     {

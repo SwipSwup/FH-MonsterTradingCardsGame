@@ -1,4 +1,6 @@
-namespace Shared.Networking.DTOs.Authentication;
+using Shared.Networking.DTOs;
+
+namespace Shared.DTOs.Authentication;
 
 public class AuthenticationResponseDto : IResponse
 {

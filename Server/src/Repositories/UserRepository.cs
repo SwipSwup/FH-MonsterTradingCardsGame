@@ -1,4 +1,4 @@
-using Shared.Networking.DTOs.User;
+using Shared.DTOs;
 
 namespace Server.Repositories;
 

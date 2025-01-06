@@ -1,4 +1,6 @@
-﻿services:
+﻿version: '3.8'
+
+services:
   server:
     image: server
     build:
@@ -8,17 +10,20 @@
       - db
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Username=postgres;Password=admin;Database=mtcg
+    ports:
+      - "8080:8080"
+
   db:
     image: postgres:15
-    container_name: mtcg_db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: mtcg
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+      - ../schema.sql:/docker-entrypoint-initdb.d/schema.sql
     ports:
       - "5432:5432"
 
-  #volumes:
-    #db_data:
+volumes:
+  postgres_data:
