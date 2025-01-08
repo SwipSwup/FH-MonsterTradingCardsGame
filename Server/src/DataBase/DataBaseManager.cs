@@ -1,85 +1,80 @@
+using System.Data;
 using Npgsql;
 
 namespace Server.DataBase;
 
 public static class DataBaseManager
 {
-    private static string _connectionString = "Host=localhost;Username=postgres;Password=admin;Database=mtcg";
-    
-    public static async Task<List<Dictionary<string, object>>> ExecuteSelectAsync(string query, Dictionary<string, object> parameters = null)
+    private const string ConnectionString =
+        "Host=localhost;Username=postgres;Password=admin;Database=mtcg;Pooling=true;MinPoolSize=10;MaxPoolSize=100;";
+
+    private static NpgsqlCommand CreateCommands(string query, NpgsqlConnection connection,
+        NpgsqlParameter[]? parameters)
     {
-        var result = new List<Dictionary<string, object>>();
+        NpgsqlCommand command = new NpgsqlCommand(query, connection);
+        command.CommandTimeout = 15;
 
-        using (var connection = new NpgsqlConnection(_connectionString))
+        if (parameters != null)
         {
-            await connection.OpenAsync();
-            using (var command = new NpgsqlCommand(query, connection))
-            {
-                if (parameters != null)
-                {
-                    foreach (var param in parameters)
-                    {
-                        command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
-                    }
-                }
-
-                using (var reader = await command.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        var row = new Dictionary<string, object>();
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                        }
-                        result.Add(row);
-                    }
-                }
-            }
+            command.Parameters.AddRange(parameters);
         }
 
-        return result;
+        return command;
     }
 
-    // Execute an INSERT/UPDATE/DELETE query
-    public static async Task<int> ExecuteNonQueryAsync(string query, Dictionary<string, object> parameters = null)
+    public static async Task<DataTable> ExecutePaginatedQueryAsync(string query,
+        int size, int page, params NpgsqlParameter[]? parameters)
     {
-        using (var connection = new NpgsqlConnection(_connectionString))
-        {
-            await connection.OpenAsync();
-            using (var command = new NpgsqlCommand(query, connection))
-            {
-                if (parameters != null)
-                {
-                    foreach (var param in parameters)
-                    {
-                        command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
-                    }
-                }
+        query += " LIMIT @PageSize OFFSET @Offset;";
 
-                return await command.ExecuteNonQueryAsync();
-            }
-        }
+        NpgsqlParameter[] paginationParameters =
+        {
+            new("@PageSize", NpgsqlTypes.NpgsqlDbType.Integer) { Value = size },
+            new("@Offset", NpgsqlTypes.NpgsqlDbType.Integer) { Value = (page - 1) * size }
+        };
+
+        return await ExecuteQueryAsync(
+            query,
+            parameters?.Concat(paginationParameters).ToArray() ?? paginationParameters
+        );
     }
 
-    // Execute a scalar query (e.g., COUNT, MAX, etc.)
-    public static async Task<object> ExecuteScalarAsync(string query, Dictionary<string, object> parameters = null)
+    public static async Task<DataTable> ExecuteQueryAsync(string query, params NpgsqlParameter[]? parameters)
     {
-        using (var connection = new NpgsqlConnection(_connectionString))
-        {
-            await connection.OpenAsync();
-            using (var command = new NpgsqlCommand(query, connection))
-            {
-                if (parameters != null)
-                {
-                    foreach (var param in parameters)
-                    {
-                        command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
-                    }
-                }
+        await using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString);
+        await connection.OpenAsync();
 
-                return await command.ExecuteScalarAsync();
-            }
+        await using NpgsqlCommand command = CreateCommands(query, connection, parameters);
+        await using NpgsqlDataReader reader = await command.ExecuteReaderAsync();  
+
+        var dataTable = new DataTable();
+        dataTable.Load(reader);  
+        return dataTable;
+    }
+
+    // Execute a non-query (e.g., INSERT, UPDATE, DELETE)
+    public static async Task<int> ExecuteNonQueryAsync(string query, params NpgsqlParameter[]? parameters)
+    {
+        await using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString);
+        await connection.OpenAsync();
+        
+        await using NpgsqlCommand command = CreateCommands(query, connection, parameters);
+
+        return await command.ExecuteNonQueryAsync();
+    }
+
+    // Execute a scalar query (e.g., return a single value)
+    public static async Task<object?> ExecuteScalarAsync(string query, params NpgsqlParameter[]? parameters)
+    {
+        await using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString);
+        await connection.OpenAsync();
+        
+        await using NpgsqlCommand command = CreateCommands(query, connection, parameters);
+        if (parameters != null)
+        {
+            command.Parameters.AddRange(parameters);
         }
+
+        return await command.ExecuteScalarAsync();
     }
 }
