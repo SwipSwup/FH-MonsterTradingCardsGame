@@ -1,6 +1,6 @@
 namespace Shared.Card.Types;
 
-public class SpellCard(string name, float damage, Element element) : Card(name, damage, element)
+public class SpellCard(string name, float damage, Element element, Rarity rarity) : Card(name, damage, element, rarity)
 {
     private readonly Dictionary<Element, Element> _elementEffectiveness = new()
     {

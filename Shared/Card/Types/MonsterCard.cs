@@ -1,7 +1,7 @@
 namespace Shared.Card.Types;
 
-public abstract class MonsterCard(string name, float damage, Element element, Species species)
-    : Card(name, damage, element)
+public class MonsterCard(string name, float damage, Element element, Species species, Rarity rarity)
+    : Card(name, damage, element, rarity)
 {
     public Species Species { get; private set; } = species;
 

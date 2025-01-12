@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using Shared.DTOs;
 
 namespace Server.Utilities;
 
@@ -10,13 +11,14 @@ public static class TokenUtilities
     private static readonly byte[] Key =
         "z97ki8G7ueDqICty6OxMHsL29tq3w6rq06FWsJt1o7lLGU4X6qyFvjdvkL1rGLjd"u8.ToArray();
 
-    public static string GenerateJwtToken(string username)
+    public static string GenerateJwtToken(UserDto user)
     {
         SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new(ClaimTypes.Name, username)
+                new(ClaimTypes.Name, user.Username),
+                new(ClaimTypes.NameIdentifier, user.UserId.ToString()),
             }),
             Expires = DateTime.UtcNow.AddHours(1),
             SigningCredentials =

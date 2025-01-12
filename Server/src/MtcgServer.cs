@@ -35,13 +35,19 @@ public class MtcgServer
         
         Router.RegisterRoute(HttpMethod.Post, "/register", UserController.RegisterUserAsync);
         Router.RegisterRoute(HttpMethod.Post, "/login", UserController.LoginUserAsync);
+        Router.RegisterRoute(HttpMethod.Patch, "/user/username", UserController.UpdateUsernameAsync);
+        
+        Router.RegisterRoute(HttpMethod.Post, "/packs/open", CardController.OpenCardPackAsync);
+        Router.RegisterRoute(HttpMethod.Put, "/user/deck/update", CardController.UpdateUserDeckAsync);
+        
+        Router.RegisterRoute(HttpMethod.Post, "/battle/start", BattleController.StartBattleAsync);
     }
 
     public void Start()
     {
         TcpListener listener = new TcpListener(IPAddress.Any, _port);
         listener.Start();
-        Console.WriteLine($"Server started, listening on port {_port}...");
+        Console.WriteLine($"Server started, listening on {IPAddress.Any}:{_port}");
 
         while (true)
         {

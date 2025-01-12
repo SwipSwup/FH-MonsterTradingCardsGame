@@ -10,12 +10,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9060efb-bb0a-4347-bad2-cc3373f06e60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/TestData.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Controller/CardController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Controller/TradeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleLog.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Gameplay/Cards/CardFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Repositories/BattleRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Repositories/CardRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/Repositories/UserCardsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Card/CardType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Card/Rarity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/DTOs/BattleDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/DTOs/BattleRoundDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/DTOs/DeckDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/DTOs/UserCardsDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/GamePlay/Battle/BattleManagerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/GamePlay/Cards/CardFactoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/Routing/RouterTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/Utilities/HttpUtilitiesTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/Utilities/PasswordUtilitiesTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/Utilities/TokenUtilitiesTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterTradingCardsGame.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterTradingCardsGame.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Controller/BattleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Controller/BattleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Controller/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/DataBase/DataBaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/DataBase/DataBaseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/MtcgServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/MtcgServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Repositories/RepositoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Repositories/RepositoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Repositories/UserCredentialsRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Utilities/HttpUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Utilities/HttpUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Utilities/TokenUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Utilities/TokenUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Card/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Card/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Card/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Card/Element.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Card/Species.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Card/Species.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Card/Types/MonsterCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Card/Types/MonsterCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Card/Types/SpellCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Card/Types/SpellCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/DTOs/Authentication/AuthenticationResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/DTOs/AuthenticationResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/DTOs/Authentication/UserCredentialsDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/DTOs/CardDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/DTOs/CardDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/DTOs/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/DTOs/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Shared.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UnitTest1.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,15 +71,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1722ecb1a3c54197a6bd3916475ac7278057de3fd11be364de17e895b188/NpgsqlDataAdapter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6e4a93bac9604e62b337712264fe1af37f4cecf9191fc72878761b22e65f5675/NpgsqlCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/88b338246f59cffdb6f3dc3d8dbcfc169599dc71d6f44a8f2732983db7f73a/AuthenticationHeaderValue.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -48,33 +89,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Server.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Server/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;RiderNuGetOptionsPageId&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Client.executor": "Run",
+    ".NET Project.Server.executor": "Run",
+    "Database Script.schema.sql.executor": "Run",
+    "Docker.Server/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PostgreSQL&quot;
+    "RunConfigurationTargetLRU": [
+      "ecda518b-81b0-45cd-b481-067c252017d4/database/\"postgres\"/schema/\"public\""
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.Server">
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/Server/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="ecda518b-81b0-45cd-b481-067c252017d4" namespace="database/&quot;postgres&quot;/schema/&quot;public&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Client" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Client/bin/Debug/net8.0/Client.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -168,9 +219,15 @@
       <item itemvalue=".NET Project.Client" />
       <item itemvalue=".NET Project.Debug" />
       <item itemvalue=".NET Project.Server" />
+      <item itemvalue="Database Script.schema.sql" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.Server/Dockerfile" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.schema.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -201,11 +258,49 @@
       <workItem from="1736087457802" duration="917000" />
       <workItem from="1736088820548" duration="9708000" />
       <workItem from="1736336579548" duration="5248000" />
+      <workItem from="1736676505622" duration="832000" />
+      <workItem from="1736677670767" duration="29235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="346" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 42% 598/1024" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 42% 598/1024" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Tests 97% 5/191" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 42% 598/1024" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Tests 97% 5/191" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Tests 97% 5/191" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 42% 598/1024" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Shared 49% 47/92" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 42% 598/1024" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Server 26% 546/741" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">

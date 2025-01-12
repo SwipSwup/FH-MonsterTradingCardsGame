@@ -6,7 +6,7 @@ namespace Server.DataBase;
 public static class DataBaseManager
 {
     private const string ConnectionString =
-        "Host=localhost;Username=postgres;Password=admin;Database=mtcg;Pooling=true;MinPoolSize=10;MaxPoolSize=100;";
+        "Host=localhost;Username=postgres;Password=admin;Database=postgres;Pooling=true;MinPoolSize=10;MaxPoolSize=100;";
 
     private static NpgsqlCommand CreateCommands(string query, NpgsqlConnection connection,
         NpgsqlParameter[]? parameters)
@@ -47,7 +47,7 @@ public static class DataBaseManager
         await using NpgsqlCommand command = CreateCommands(query, connection, parameters);
         await using NpgsqlDataReader reader = await command.ExecuteReaderAsync();  
 
-        var dataTable = new DataTable();
+        DataTable dataTable = new DataTable();
         dataTable.Load(reader);  
         return dataTable;
     }
@@ -70,10 +70,10 @@ public static class DataBaseManager
         await connection.OpenAsync();
         
         await using NpgsqlCommand command = CreateCommands(query, connection, parameters);
-        if (parameters != null)
+        /*if (parameters != null)
         {
             command.Parameters.AddRange(parameters);
-        }
+        }*/
 
         return await command.ExecuteScalarAsync();
     }

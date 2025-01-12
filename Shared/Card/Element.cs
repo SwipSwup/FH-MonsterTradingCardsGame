@@ -2,7 +2,7 @@ namespace Shared.Card;
 
 public enum Element
 {
-    Fire,
-    Water,
-    Normal
+    Water = 1,
+    Fire = 2,
+    Normal = 3
 }

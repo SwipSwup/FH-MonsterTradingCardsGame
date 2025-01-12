@@ -2,9 +2,13 @@ namespace Shared.DTOs;
 
 public class UserDto
 {
-    public Guid UserId;
+    public int UserId;
+
     public string Username { get; set; }
-    
-    public List<CardDto> AllCards { get; set; }
-    public List<CardDto> DeckCards { get; set; }
+
+    public string Password { get; set; }
+
+    public int Mmr;
+
+    public int Currency;
 }

@@ -1,12 +1,16 @@
 namespace Shared.Card;
 
-public abstract class Card(string name, float damage, Element element)
+public abstract class Card(string name, float damage, Element element, Rarity rarity)
 {
+    public int Id;
+    
     public string Name { get; private set; } = name;
 
     public float Damage { get; private set; } = damage;
 
     public Element Element { get; private set; } = element;
+    
+    public Rarity Rarity { get; private set; } = rarity;
 
     protected Dictionary<Species, float> DamageModifiers = new();
 

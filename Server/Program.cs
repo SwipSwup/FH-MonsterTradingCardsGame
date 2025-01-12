@@ -2,7 +2,9 @@
 using Server;
 using Server.DataBase;
 
-//new MtcgServer().Start();
+new MtcgServer().Start();
+
+return 0;
 
 string request = @"SELECT
     c.card_id,

@@ -5,6 +5,17 @@ namespace Shared.Networking.Http;
 
 public static class HttpUtilities
 {
+    public static bool TryGetAuthenticationToken(HttpRequestMessage request, out string? token)
+    {
+        token = null;
+
+        if (request.Headers.Authorization is not { Scheme: "Bearer" }) 
+            return false;
+        
+        token = request.Headers.Authorization.Parameter;
+        return true;
+    }
+    
     public static string HttpResponseMessageToString(HttpResponseMessage response)
     {
         StringBuilder rawResponse = new StringBuilder();
