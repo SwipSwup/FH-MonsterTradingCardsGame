@@ -5,9 +5,13 @@ namespace Server.DataBase;
 
 public static class DataBaseManager
 {
-    private const string ConnectionString =
-        "Host=localhost;Username=postgres;Password=admin;Database=postgres;Pooling=true;MinPoolSize=10;MaxPoolSize=100;";
+    //private const string ConnectionString =
+    //    "Host=localhost;Username=postgres;Password=admin;Database=postgres;Pooling=true;MinPoolSize=10;MaxPoolSize=100;";
 
+    private static readonly string ConnectionString =
+        Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
+        ?? "Host=localhost;Username=postgres;Password=admin;Database=postgres;";
+    
     private static NpgsqlCommand CreateCommands(string query, NpgsqlConnection connection,
         NpgsqlParameter[]? parameters)
     {
@@ -15,7 +19,7 @@ public static class DataBaseManager
         command.CommandTimeout = 15;
 
         if (parameters != null)
-        {
+        { 
             command.Parameters.AddRange(parameters);
         }
 
@@ -26,7 +30,7 @@ public static class DataBaseManager
         int size, int page, params NpgsqlParameter[]? parameters)
     {
         query += " LIMIT @PageSize OFFSET @Offset;";
-
+    
         NpgsqlParameter[] paginationParameters =
         {
             new("@PageSize", NpgsqlTypes.NpgsqlDbType.Integer) { Value = size },

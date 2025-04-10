@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9060efb-bb0a-4347-bad2-cc3373f06e60" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/Server/src/Controller/CardController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Server/src/Controller/TradeController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleEntity.cs" afterDir="false" />
@@ -37,6 +38,9 @@
       <change beforePath="$PROJECT_DIR$/Server/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/Controller/BattleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Controller/BattleController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/Controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Controller/UserController.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MonsterTradingCardsGame/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/Server/src/DataBase/DataBaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/DataBase/DataBaseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Gameplay/Battle/BattleManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/MtcgServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/MtcgServer.cs" afterDir="false" />
@@ -257,9 +261,18 @@
       <workItem from="1736086773640" duration="161000" />
       <workItem from="1736087457802" duration="917000" />
       <workItem from="1736088820548" duration="9708000" />
+<<<<<<< Updated upstream
       <workItem from="1736336579548" duration="5248000" />
       <workItem from="1736676505622" duration="832000" />
       <workItem from="1736677670767" duration="29235000" />
+=======
+      <workItem from="1736336579548" duration="5556000" />
+      <workItem from="1736348694524" duration="6595000" />
+      <workItem from="1737453608970" duration="4319000" />
+      <workItem from="1740121231928" duration="24000" />
+      <workItem from="1740743202147" duration="1333000" />
+      <workItem from="1741178033594" duration="1564000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

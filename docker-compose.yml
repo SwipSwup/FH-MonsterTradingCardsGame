@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     environment:
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Username=postgres;Password=admin;Database=mtcg
+      - ConnectionStrings__DefaultConnection=Host=db;Username=postgres;Password=admin;Database=mtcg;Pooling=true;MinPoolSize=10;MaxPoolSize=100;   
     ports:
       - "8080:8080"
 
@@ -21,7 +21,9 @@ services:
       POSTGRES_DB: mtcg
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ../schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - type: bind
+        source: ./Server/schema.sql
+        target: /docker-entrypoint-initdb.d/schema.sql
     ports:
       - "5432:5432"
 

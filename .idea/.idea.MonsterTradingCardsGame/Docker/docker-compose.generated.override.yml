@@ -1,0 +1,22 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  server:
+    build:
+      context: "C:\\FH\\WS2024\\SWEN1\\MonsterTradingCardsGame"
+      dockerfile: "Server/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Server.dll"
+    environment:
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "server:dev"
+    ports: []
+    volumes:
+    - "C:\\FH\\WS2024\\SWEN1\\MonsterTradingCardsGame\\Server:/app:rw"
+    - "C:\\FH\\WS2024\\SWEN1\\MonsterTradingCardsGame:/src:rw"
+    - "C:\\Users\\david\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
